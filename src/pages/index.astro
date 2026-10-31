@@ -1,16 +1,83 @@
 ---
+import "../styles/global.css";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Tic Tac Toe</title>
+    <meta
+      name="description"
+      content="A simple two-player Tic Tac Toe game."
+    />
+  </head>
+
+  <body>
+    <main class="game-container">
+
+      <!-- Game Header -->
+      <header class="game-header">
+        <h1>Tic Tac Toe</h1>
+        <p>A classic game for two players</p>
+      </header>
+
+      <!-- Player Indicators -->
+      <section class="players">
+        <div class="player active">
+          <span>Player 1</span>
+          <strong>X</strong>
+        </div>
+
+        <div class="player">
+          <span>Player 2</span>
+          <strong>O</strong>
+        </div>
+      </section>
+
+      <!-- Game Board -->
+      <section class="game-board" aria-label="Tic Tac Toe board">
+        <button class="cell" aria-label="Cell 1"></button>
+        <button class="cell" aria-label="Cell 2"></button>
+        <button class="cell" aria-label="Cell 3"></button>
+        <button class="cell" aria-label="Cell 4"></button>
+        <button class="cell" aria-label="Cell 5"></button>
+        <button class="cell" aria-label="Cell 6"></button>
+        <button class="cell" aria-label="Cell 7"></button>
+        <button class="cell" aria-label="Cell 8"></button>
+        <button class="cell" aria-label="Cell 9"></button>
+      </section>
+
+      <!-- Game Status -->
+      <p class="game-status" aria-live="polite">
+		Player X's turn</p>
+
+      <!-- Scoreboard -->
+      <section class="scoreboard">
+  <div>
+    <span>Player X</span>
+    <strong id="score-x">0</strong>
+  </div>
+
+  <div>
+    <span>Draws</span>
+    <strong id="score-draws">0</strong>
+  </div>
+
+  <div>
+    <span>Player O</span>
+    <strong id="score-o">0</strong>
+  </div>
+</section>
+
+      <!-- Game Controls -->
+      <button id="restart-button" class="restart-button">Restart Game</button>
+
+	  <button id="reset-scores-button" class="reset-scores-button">
+  Reset Scores
+</button>
+
+    </main>
+	<script>import "../scripts/game.js";</script>
+  </body>
 </html>
